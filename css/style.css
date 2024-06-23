@@ -252,7 +252,7 @@ li.purple .box-dropdown:after{
 	line-height:20px;
 	top:200%;
 	padding-top:13px !important;
-	z-inex:9999;
+	z-index:9999;
 	overflow:hidden;
 	width:0;
 	height:0;
@@ -359,7 +359,7 @@ li.purple .box-dropdown:after{
 .iconic-input .icons{
 	position:absolute;
 	color:#7a8188!important;
-	z-inex:9999;
+	z-index:9999;
 	left:auto!important;
 	top:10px!important;
 	right:10px!important;
@@ -2372,6 +2372,7 @@ span.price{
 	color:#e74c3c;
 	font-size:16px;
 	font-weight:600;
+	
 }
 
 span.price del{
@@ -3530,7 +3531,7 @@ ul.comments li ul li{
 }
 
 .product-single-info span.price{
-	font-size:24px;
+	font-size:4px;
 	display:block;
 	margin:-10px 0 0;	
 	vertical-align:bottom;

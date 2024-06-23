@@ -171,13 +171,12 @@ while ($row=mysqli_fetch_array($ret))
 <div class="Cake-title-m" style="color:black;">
 <h4><a href="product-details.php?pid=<?php echo htmlentities($row['id']);?>"><?php echo htmlentities($row['productName']);?></a></h4>
 
-<span class="price">Ksh <?php echo htmlentities($row['productPrice']);?> <s>  Ksh <?php echo htmlentities($row['productPriceBeforeDiscount']);?></s></span>
+<span style="margin-right:90px;" class="price">RS. <?php echo htmlentities($row['productPrice']);?> <s> RS. <?php echo htmlentities($row['productPriceBeforeDiscount']);?></s></span>
 
 
 </div>
 <div class="inventory_info_m">
-<iframe name="Framename" src="rating/index.php" width="100" height="120" frameborder="0" scrolling="no" style="width:100%;"> </iframe>
- <div class="action"><a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="lnk btn btn-primary">Add to Cart</a></div>
+ <div class="action"><a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" style="background-color:black;" class="lnk btn btn-primary">Add to Cart</a></div>
 </div>
 </div>
 </div>
@@ -189,62 +188,8 @@ while ($row=mysqli_fetch_array($ret))
 </section>
 <!-- /Resent Cat -->
 
-
-<?php
-include('includes/config2.php'); ?>
-<!--Testimonial -->
-<section class="section-padding testimonial-section parallex-bg">
-  <div class="container div_zindex">
-    <div class="section-header white-text text-center">
-      <h2>Our Satisfied <span>Customers</span></h2>
-    </div>
-    <div class="row">
-      <div id="testimonial-slider">
-
-<?php
-
-$tid=1;
-$sql = "SELECT pato_testimonial.Testimonial,pato_users.FullName from pato_testimonial join pato_users on pato_testimonial.UserEmail=pato_users.EmailId where pato_testimonial.status=:tid";
-$query = $dbh -> prepare($sql);
-$query->bindParam(':tid',$tid, PDO::PARAM_STR);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query->rowCount() > 0)
-{
-foreach($results as $result)
-{  ?>
-
-
-        <div class="testimonial-m">
-
-          <div class="testimonial-content">
-            <div class="testimonial-heading">
-              <h5><?php echo htmlentities($result->FullName);?></h5>
-            <p><?php echo htmlentities($result->Testimonial);?></p>
-          <!--   <iframe name="Framename" src="rating/index.php" width="100" height="120" frameborder="0" scrolling="no" style="width:100%;"> </iframe> -->
-
-          </div>
-
-        </div>
-        </div>
-
-        <?php }} ?>
-
-
-
-      </div>
-    </div>
-  </div>
-  <!-- Dark Overlay-->
-  <div class="dark-overlay"></div>
-  <?php include('includes/footer.php');?>
-</section>
-<!-- /Testimonial-->
-
-
 <!--Footer -->
-
+<?php include('includes/footer.php');?>
 <!-- /Footer-->
 
 <!--Back to top-->
